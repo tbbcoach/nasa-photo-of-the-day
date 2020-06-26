@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import PhotoCard from './PhotoCard';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const Page = styled.div`
+background-color: dodgerblue;
+`
 
 export default function PhotoPage() {
     const [photo, setPhoto] = useState([]);
@@ -19,7 +24,7 @@ export default function PhotoPage() {
     }, []);
 
     return (
-        <div className='pod'>
+        <Page className='pod'>
             <PhotoCard 
                 id={photo.url}
                 title={photo.title}
@@ -27,6 +32,6 @@ export default function PhotoPage() {
                 explanation={photo.explanation}
                 image={photo.url}
             />
-        </div>
+        </Page>
     )
 }
